@@ -2,11 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main', url: '<https://github.com/jaisingh24/devops.git>'
-            }
-        }
+        
+        
 
         stage('Build') {
             steps {
