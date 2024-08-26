@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'master', url: '<>'
+                git branch: 'main', url: '<https://github.com/jaisingh24/devops.git>'
             }
         }
 
@@ -24,8 +24,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sshagent(['your-ssh-credentials-id']) {
-                    sh 'scp -r * user@your-public-ip:/var/www/html/'
+                sshagent(['my-ec2-ssh']) {
+                    sh 'scp -r * user@http://54.162.178.100/:/var/www/html/'
                 }
             }
         }
